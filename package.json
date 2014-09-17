@@ -1,6 +1,6 @@
 {
   "name": "pretty-stream",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Format a stream to make it more human readable",
   "main": "index.js",
   "dependencies": {
