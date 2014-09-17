@@ -1,0 +1,20 @@
+{
+  "name": "pretty-stream",
+  "version": "0.0.0",
+  "description": "Format a stream to make it more human readable",
+  "main": "index.js",
+  "dependencies": {
+    "through2": "^0.6.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/pretty-stream.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/pretty-stream/issues"
+  },
+  "homepage": "https://github.com/mafintosh/pretty-stream"
+}
