@@ -115,6 +115,13 @@ socket
   .pipe(process.stdout)
 ```
 
+## More options
+
+* `text: false` - all output is treated as binary (printed as hexadecimal)
+* `binary: false` - all output is treated as text
+* `prefix: false` - disable offset prefixing
+* `truncate: true` - truncate binary output
+
 ## License
 
 MIT

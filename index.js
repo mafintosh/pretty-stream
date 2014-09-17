@@ -47,7 +47,7 @@ var format = function(opts) {
   if (!opts) opts = {}
 
   var width = 81
-  var binary = false
+  var binary = opts.text === false ? true : false
   var missing = width
   var fbinary = opts.truncate ? shortHex() : toHex
   var offset = 0
@@ -108,7 +108,7 @@ var format = function(opts) {
   }
 
   var stream = through(function ondata(data, enc, cb) {
-    if (binary) {
+    if (binary || opts.binary === false) {
       push(data)
       return cb()
     }
