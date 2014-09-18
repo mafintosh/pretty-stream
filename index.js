@@ -62,6 +62,11 @@ var format = function(opts) {
     return data
   }
 
+  var fmtNewline = function() {
+    if (opts.newline) return opts.newline(os.EOL)
+    return NEWLINE
+  }
+
   var fmt = function(data) {
     if (opts.text && !binary) return opts.text(data.toString())
     if (opts.binary && binary) return opts.binary(data.toString())
@@ -87,7 +92,7 @@ var format = function(opts) {
         missing = width
         consume(nl+1)
         stream.push(fmt(next))
-        stream.push(NEWLINE)
+        stream.push(fmtNewline())
         continue
       }
 
@@ -102,7 +107,7 @@ var format = function(opts) {
 
       missing = width
       stream.push(fmt(next))
-      stream.push(NEWLINE)
+      stream.push(fmtNewline())
       continue
     }
   }
@@ -123,14 +128,14 @@ var format = function(opts) {
     binary = true
 
     if (missing !== width) {
-      stream.push(NEWLINE)
+      stream.push(fmtNewline())
       missing = width
     }
     push(data.slice(offset))
 
     cb()
   }, function(cb) {
-    if (missing !== width) stream.push(NEWLINE)
+    if (missing !== width) stream.push(fmtNewline())
     cb()
   })
 
