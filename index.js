@@ -87,7 +87,7 @@ var format = function(opts) {
       }
 
       if (nl > -1) {
-        next = next[next.length-1] === 13 ? next.slice(0, nl-1) : next.slice(0, nl)
+        next = (nl > 0 && next[nl-1] === 13) ? next.slice(0, nl-1) : next.slice(0, nl)
         buf = buf.slice(nl+1)
         missing = width
         consume(nl+1)
